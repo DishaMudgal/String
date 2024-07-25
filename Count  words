@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+
+public class Runner {
+
+	public static void main(String[] args) {
+		Scanner sr= new Scanner(System.in);
+		String str = sr.nextLine();
+		if(str==null)
+		{
+			str="";
+		}
+		int count = Solution.countWords(str);
+		System.out.println(count);
+	}
+}
+
+public class Solution {
+
+	public static int countWords(String str) {	
+		int noOfWords = 1;
+        if (str == null || str.isEmpty()) {
+return 0;
+}
+		for(int i = 0;i < str.length();i++) {
+			if(str.charAt(i) == ' ')
+				noOfWords++;
+		}
+return noOfWords;
+
+    }
+}
