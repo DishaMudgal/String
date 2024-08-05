@@ -1,0 +1,31 @@
+public class Solution {
+	public static String getCompressedString(String str) {
+		int count=1,n=str.length(), i=0;
+		String output="";
+		for( i=0;i<n-1;i++){
+		if(str.charAt(i)==str.charAt(i+1))
+		{
+          count++;
+		}
+			else{
+				if(count==1){
+					output=output+(char)str.charAt(i);
+				}
+				else{
+	           output=output+(char)str.charAt(i)+count;
+				count=1;
+				}
+			}
+		
+		}
+				if(count==1){
+				output=output+(char)str.charAt(i);
+		}else{
+			output=output+(char)str.charAt(i)+count;
+		}
+
+		return output;
+
+	}
+
+}
